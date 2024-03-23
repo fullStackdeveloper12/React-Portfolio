@@ -1,0 +1,148 @@
+.portfolio__container {
+  grid-template-columns: repeat(3, 1fr);
+}
+.portfolio__item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.portfolio__img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.portfolio__hover {
+  background-color: var(--first-color);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.portfolio__item:hover .portfolio__hover {
+  opacity: 1;
+}
+
+.portfolio__title {
+  color: var(--text-white);
+  font-weight: var(--large-font-size);
+  font-weight: var(--weight-500);
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+}
+.portfolio__item:hover .portfolio__title {
+  transform: translateY(0);
+}
+
+.portfolio__modal {
+  position: fixed;
+  inset: 0;
+  background-color: hsla(0, 0%, 0%, 0.7);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 15px;
+}
+.portfolio__modal-content {
+  background-color: var(--container-color);
+  max-width: 650px;
+  width: 100%;
+  padding: 32px;
+  border-radius: 10px;
+  position: relative;
+}
+.modal__close {
+  position: absolute;
+  top: -3.5%;
+  right: -8.5%;
+  width: 50px;
+  height: 50px;
+  filter: invert(0.8);
+}
+.modal__title {
+  text-align: center;
+  color: var(--first-color);
+  font-size: var(--h2-font-size);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.modal__list {
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px !important;
+  margin-bottom: 24px;
+}
+.modal__item {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.item__icon {
+  display: flex;
+}
+.item__title,
+.item__details {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+.item__details {
+  font-weight: var(--weight-600);
+}
+.modal__img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* For screens up to 600px width (phones) */
+@media (max-width: 600px) {
+  .portfolio__container {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+
+  .portfolio__item {
+    margin-bottom: 20px; /* Add margin between items */
+  }
+
+  .portfolio__img {
+    height: 200px; /* Reduce image height */
+  }
+
+  .portfolio__title {
+    transform: translateY(0); /* Show title by default on small screens */
+  }
+
+  .portfolio__modal-content {
+    max-width: 100%; /* Adjust modal content width */
+    padding: 16px; /* Adjust padding */
+  }
+
+  .modal__close {
+    top: 10px; /* Adjust close button position */
+    right: 10px; /* Adjust close button position */
+  }
+
+  .modal__title {
+    font-size: 24px; /* Reduce title font size */
+    margin-bottom: 16px; /* Adjust margin */
+  }
+
+  .modal__list {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+
+  .modal__item {
+    justify-content: flex-start; /* Align items to the start */
+    column-gap: 4px; /* Reduce gap between icon and text */
+    margin-bottom: 10px; /* Adjust margin */
+  }
+
+  .modal__img {
+    height: 250px; /* Reduce image height */
+  }
+}

@@ -1,0 +1,95 @@
+.home {
+  grid-template-columns: 4.32fr 7.68fr;
+  align-items: center;
+  padding: 40px;
+  height: 100vh;
+}
+
+.home__img {
+  height: 80%;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 8px hsla(0, 0%, 0%, 0.3);
+  z-index: 1;
+  margin-bottom: -60px;
+}
+
+.home__data {
+  max-width: 600px;
+  margin-inline: auto;
+  padding-top: 20px;
+}
+
+.home__title {
+  position: relative;
+  font-size: var(--h1-font-size);
+  line-height: 1.24;
+  padding-left: 70px;
+}
+
+.home__title span {
+  color: var(--first-color);
+}
+
+.home__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 22%;
+  width: 40px;
+  height: 5px;
+  border-radius: 10px;
+  background-color: var(--first-color);
+}
+
+.home__description {
+  line-height: 2.125;
+  margin-block: 16px 32px;
+}
+
+.color__block {
+  position: fixed;
+  height: 200%;
+  width: 100%;
+  background-color: var(--first-color);
+  top: -50%;
+  left: -83%;
+  transform: rotate(-15deg);
+}
+/* For screens up to 600px width (phones) */
+@media (max-width: 600px) {
+  .home {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+    padding: 20px; /* Reduce padding */
+    height: auto; /* Remove fixed height */
+  }
+
+  .home__img {
+    height: auto; /* Adjust height */
+    width: 100%; /* Make image full width */
+    border-radius: 20px; /* Adjust border radius */
+    box-shadow: none; /* Remove box shadow */
+    margin-bottom: 20px; /* Add some margin to separate from other content */
+  }
+
+  .home__data {
+    max-width: 100%; /* Make text content full width */
+    padding-top: 0; /* Remove top padding */
+  }
+
+  .home__title {
+    padding-left: 0; /* Remove padding */
+  }
+
+  .home__title::before {
+    display: none; /* Hide the title decoration */
+  }
+
+  .home__description {
+    margin-block: 16px 0; /* Adjust margins */
+  }
+
+  .color__block {
+    display: none; /* Hide color block */
+  }
+}
